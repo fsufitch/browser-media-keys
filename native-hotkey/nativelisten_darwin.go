@@ -1,0 +1,5 @@
+package nativehotkey
+
+func foo() {
+
+}
