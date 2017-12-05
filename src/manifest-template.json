@@ -8,6 +8,12 @@
     "scripts": []
   },
   "content_scripts": [],
+  "options_ui": {
+    "browser_style": true,
+    "page": "options.html"
+  },
+  "permissions": ["storage"],
+  
   "commands": {
     "mediaPlayPause": {
       "suggested_key": { "default": "Ctrl+Shift+9" },

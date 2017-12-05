@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <p class="browser-style">
+    <label id="nativeMode">
+      <input type="checkbox" />
+      Use Native Mode
+      <em id="notSupportedWarning" class="d-none text-muted">
+        (not supported on your browser/OS)
+      </em>
+    </label>
+  </p>
+
+  <p class="text-muted">
+    "Native Mode" uses code specifically designed for your browser/operating
+    system to ensure hotkeys work even when your browser is not in focus.
+    Having this mode disabled (or not supported) means you may experience
+    problems when your browser is not in focus.
+  </p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Shortcut</th>
+        <th scope="col">Modifiers</th>
+        <th scope="col">Key</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <th scope="row">⏯️ Play/pause</th>
+        <td>
+          <div class="btn-group" role="group" data-toggle="buttons" aria-label="Play/pause modifiers" id="playPauseModifiers">
+            <label class="btn btn-default"> <input type="checkbox" name="ctrl" autocomplete="off"/> Ctrl </label>
+            <label class="btn btn-default"> <input type="checkbox" name="shift" autocomplete="off"/> Shift </label>
+            <label class="btn btn-default"> <input type="checkbox" name="alt" autocomplete="off"/> Alt </label>
+            <label class="btn btn-default"> <input type="checkbox" name="super" autocomplete="off"/> Super </label>
+          </div>
+        </td>
+        <td>
+          <input class="click-key form-control" id="playPauseKey" />
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">⏹️ Stop</th>
+        <td>
+          <div class="btn-group" role="group" data-toggle="buttons" aria-label="Stop modifiers" id="stopModifiers">
+            <label class="btn btn-default"> <input type="checkbox" name="ctrl" autocomplete="off"/> Ctrl </label>
+            <label class="btn btn-default"> <input type="checkbox" name="shift" autocomplete="off"/> Shift </label>
+            <label class="btn btn-default"> <input type="checkbox" name="alt" autocomplete="off"/> Alt </label>
+            <label class="btn btn-default"> <input type="checkbox" name="super" autocomplete="off"/> Super </label>
+          </div>
+        </td>
+        <td>
+          <input class="click-key form-control" id="stopKey" />
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">⏭️ Next/forward</th>
+        <td>
+          <div class="btn-group" role="group" data-toggle="buttons" aria-label="Next modifiers" id="nextModifiers">
+            <label class="btn btn-default"> <input type="checkbox" name="ctrl" autocomplete="off"/> Ctrl </label>
+            <label class="btn btn-default"> <input type="checkbox" name="shift" autocomplete="off"/> Shift </label>
+            <label class="btn btn-default"> <input type="checkbox" name="alt" autocomplete="off"/> Alt </label>
+            <label class="btn btn-default"> <input type="checkbox" name="super" autocomplete="off"/> Super </label>
+          </div>
+        </td>
+        <td>
+          <input class="click-key form-control" id="nextKey" />
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">⏮️ Previous/backward</th>
+        <td>
+          <div class="btn-group" role="group" data-toggle="buttons" aria-label="Previous modifiers" id="prevModifiers">
+            <label class="btn btn-default"> <input type="checkbox" name="ctrl" autocomplete="off"/> Ctrl </label>
+            <label class="btn btn-default"> <input type="checkbox" name="shift" autocomplete="off"/> Shift </label>
+            <label class="btn btn-default"> <input type="checkbox" name="alt" autocomplete="off"/> Alt </label>
+            <label class="btn btn-default"> <input type="checkbox" name="super" autocomplete="off"/> Super </label>
+          </div>
+        </td>
+        <td>
+          <input class="click-key form-control" id="backKey" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="browser-style">
+    <button id="submit" class="btn btn-primary" type="submit">Save</button>
+  </div>
+</body>
+</html>

@@ -4,6 +4,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var ENV = process.env.ENV;
 var isDeploy = ENV === 'deploy';
@@ -19,8 +20,9 @@ module.exports = () => {
   config.devtool = 'source-map';
 
   config.entry = {
-    background: './src/main.background.ts',
-    content_scripts: './src/main.content_scripts.ts',
+    background: root('src', '/main.background.ts'),
+    content_scripts: root('src','main.content_scripts.ts'),
+    options: root('src', 'main.options.ts'),
   };
 
   config.output = {
@@ -29,7 +31,7 @@ module.exports = () => {
   };
 
   config.resolve = {
-    extensions: ['.ts', '.js', '.json'],
+    extensions: ['.ts', '.js', '.json', '.html', '.css', '.scss'],
     alias: [{
       alias: 'jquery',
       name: 'jquery/src/jquery',
@@ -43,10 +45,11 @@ module.exports = () => {
   var atlConfigFile = root('src', 'tsconfig.json');
   config.module = {
     rules: [
+      {test: require.resolve("jquery"), loaders: ["expose-loader?$", "expose-loader?jQuery"] },
       {test: /\.ts$/, loader: 'awesome-typescript-loader?configFileName=' + atlConfigFile},
       {test: /\.json$/, loader: 'json-loader'},
-      //{test: /\.(gif|png|jpg|svg|woff|woff2|ttf|eot)$/, loader: 'file-loader'},
-      //{test: /\.(css|scss|sass)$/, loaders: ['to-string-loader', 'css-loader', 'sass-loader']},
+      {test: /\.(css|scss|sass)$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
+      {test: /\.(gif|png|jpg|svg|woff|woff2|ttf|eot)$/, loader: 'file-loader'},
       //{test: /\.html$/, loader: 'html-loader'}
     ]
   };
@@ -64,6 +67,11 @@ module.exports = () => {
       'process.env': {
         ENV: JSON.stringify(envText),
       }
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'options.html',
+      template: root('src', 'browser-media-keys', 'options', 'options.html'),
+      chunks: ['options'],
     }),
     new webpack.NoEmitOnErrorsPlugin(),
   ];
