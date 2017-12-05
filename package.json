@@ -1,0 +1,33 @@
+{
+  "name": "browser-media-keys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsufitch/browser-media-keys.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsufitch/browser-media-keys/issues"
+  },
+  "homepage": "https://github.com/fsufitch/browser-media-keys#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.2.16",
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.3",
+    "json-loader": "^0.5.7",
+    "typescript": "^2.6.2",
+    "web-ext-types": "^1.1.1",
+    "webpack": "^3.10.0"
+  }
+}

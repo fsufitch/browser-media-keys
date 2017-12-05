@@ -1,0 +1,33 @@
+{
+  "name": "Browser Media Keys",
+  "description": "Hit pause/play, previous/next, and other shortcuts from outside your browser",
+  "homepage_url": "https://github.com/fsufitch/browser-media-keys",
+  "manifest_version": 2,
+  "version": "1.0",
+  "background": {
+    "scripts": []
+  },
+  "content_scripts": [],
+  "commands": {
+    "mediaPlayPause": {
+      "suggested_key": { "default": "Ctrl+Shift+9" },
+      "description": "Send a 'play/pause' command to any active media sites",
+      "global": true
+    },
+    "mediaStop": {
+      "suggested_key": { "default": "MediaStop" },
+      "description": "Send a 'stop' command to any active media sites",
+      "global": true
+    },
+    "mediaPrevTrack": {
+      "suggested_key": { "default": "Ctrl+Shift+8" },
+      "description": "Send a 'previous track' command to any active media sites",
+      "global": true
+    },
+    "mediaNextTrack": {
+      "suggested_key": { "default": "Ctrl+Shift+0" },
+      "description": "Send a 'next track' command to any active media sites",
+      "global": true
+    }
+  }
+}
